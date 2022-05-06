@@ -17,12 +17,12 @@ const App = () => {
 
  
   useEffect(() => {
-    const comboMoves = userChoice + computerChoice;
+    const handsPattern = userChoice + computerChoice;
     if (userPoints <= 4 && computerPoints <= 4) {
       if (
-        comboMoves === "scissorspaper" ||
-        comboMoves === "rockscissors" ||
-        comboMoves === "paperrock"
+        handsPattern === "scissorspaper" ||
+        handsPattern === "rockscissors" ||
+        handsPattern === "paperrock"
       ) {
         // userPoints.current += 1
         const updatedUserPoints = userPoints + 1;
@@ -35,9 +35,9 @@ const App = () => {
       }
 
       if (
-        comboMoves === "paperscissors" ||
-        comboMoves === "scissorsrock" ||
-        comboMoves === "rockpaper"
+        handsPattern === "paperscissors" ||
+        handsPattern === "scissorsrock" ||
+        handsPattern === "rockpaper"
       ) {
         const updatedComputerPoints = computerPoints + 1;
         setComputerPoints(updatedComputerPoints);
@@ -49,13 +49,14 @@ const App = () => {
       }
 
       if (
-        comboMoves === "paperpaper" ||
-        comboMoves === "rockrock" ||
-        comboMoves === "scissorsscissors"
+        handsPattern === "paperpaper" ||
+        handsPattern === "rockrock" ||
+        handsPattern === "scissorsscissors"
       ) {
         setTurnResult("No one gets a point!");
       }
     }
+    // eslint-disable-next-line 
   }, [computerChoice, userChoice]);
 
   return (
